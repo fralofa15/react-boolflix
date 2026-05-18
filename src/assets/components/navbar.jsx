@@ -1,4 +1,14 @@
+import { useState } from "react";
 function Navbar() {
+
+    const [search, setSearch] = useState("");
+
+    function handleSearch(event){
+        setSearch(event.target.value)
+    }
+    
+    console.log(search)
+
     return (
         <header className="navbar navbar-dark bg-dark px-4 py-3">
             <div className="container-fluid">
@@ -9,6 +19,8 @@ function Navbar() {
                         className="form-control me-2"
                         type="text"
                         placeholder="Cerca un film"
+                        value={search}
+                        onChange={handleSearch}
                     />
 
                     <button className="btn btn-danger" type="submit">
