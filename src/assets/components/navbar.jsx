@@ -7,14 +7,20 @@ function Navbar() {
         setSearch(event.target.value)
     }
     
-    console.log(search)
+    console.log(search);
+
+    function handleSubmit(event){
+        event.preventDefault();
+        console.log("hai cercato", search);
+    }
+
 
     return (
         <header className="navbar navbar-dark bg-dark px-4 py-3">
             <div className="container-fluid">
                 <h1 className="text-danger m-0">BOOLFLIX</h1>
 
-                <form className="d-flex">
+                <form className="d-flex" onSubmit={handleSubmit}>
                     <input
                         className="form-control me-2"
                         type="text"
