@@ -1,5 +1,5 @@
 import { useState } from "react";
-function Navbar() {
+function Navbar({ onSearch }) {
 
     const [search, setSearch] = useState("");
 
@@ -11,7 +11,7 @@ function Navbar() {
 
     function handleSubmit(event){
         event.preventDefault();
-        console.log("hai cercato", search);
+        onSearch(search)
     }
 
 
