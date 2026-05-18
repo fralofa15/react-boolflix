@@ -1,3 +1,4 @@
+import Navbar from "./assets/components/navbar";
 function App() {
   const apiKey = import.meta.env.VITE_API_KEY;
 
@@ -6,5 +7,10 @@ function App() {
     .then((data) => {
       console.log(data);
     });
+    return(
+      <>
+        <Navbar/>
+      </>
+    );
 }
 export default App
