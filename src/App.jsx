@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "./assets/components/navbar";
 import CardsDisplay from "./assets/components/cardsDisplay";
+import CardDetails from "./assets/components/cardDetails";
 function App() {
 
   function handleSearch(query) {
@@ -14,8 +15,9 @@ function App() {
   }
 
   const [movie, setMovie] = useState([]);
+  const [movieDetails, setMovieDetails] = useState(null);
 
-  console.log(movie);
+  console.log(movieDetails);
   
 
   const apiKey = import.meta.env.VITE_API_KEY;
@@ -23,7 +25,7 @@ function App() {
   return (
     <>
       <Navbar onSearch={handleSearch}/>
-      <CardsDisplay movies={movie} />
+      <CardsDisplay movies={movie} onSelectMovie={setMovieDetails} selectedMovie={movieDetails} />
     </>
   );
 }
