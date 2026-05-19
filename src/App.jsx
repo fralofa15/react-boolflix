@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Navbar from "./assets/components/navbar";
+import CardsDisplay from "./assets/components/cardsDisplay";
 function App() {
 
   function handleSearch(query) {
@@ -22,6 +23,7 @@ function App() {
   return (
     <>
       <Navbar onSearch={handleSearch}/>
+      <CardsDisplay movies={movie} />
     </>
   );
 }
