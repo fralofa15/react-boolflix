@@ -1,6 +1,9 @@
 function CardDetails({ movie }) {
     const voteFromZeroToFive = movie.vote_average / 2;
 
+    const title = movie.title || movie.name;
+    const originalTitle = movie.original_title || movie.original_name;
+
     function renderStars() {
         const stars = [];
 
@@ -22,8 +25,8 @@ function CardDetails({ movie }) {
 
     return (
         <div className="card-body text-white">
-            <h5>{movie.title}</h5>
-            <p><strong>Titolo originale:</strong> {movie.original_title}</p>
+            <h5>{title}</h5>
+            <p><strong>Titolo originale:</strong> {originalTitle}</p>
             <p><strong>Lingua:</strong> {movie.original_language}</p>
             <p><strong>Voto:</strong> {renderStars()}</p>
             <p>{movie.overview}</p>
