@@ -1,7 +1,7 @@
 import Card from "./card";
 function CardsDisplay({ movies }) {
     return (
-        <main className="container bg-secondary">
+        <main className="bg-secondary">
             <div className="row">
                 {movies.map((movie) => (
                     <div className="col-3 p-3" key={movie.id}>

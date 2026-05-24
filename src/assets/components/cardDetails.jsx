@@ -23,11 +23,40 @@ function CardDetails({ movie }) {
         return stars;
     }
 
+        const languageToCountry = {
+        en: "gb",
+        it: "it",
+        fr: "fr",
+        es: "es",
+        de: "de",
+        ja: "jp",
+        ko: "kr",
+        zh: "cn",
+        pt: "pt",
+        ru: "ru",
+    };
+
+    const countryCode = languageToCountry[movie.original_language];
+
+    function renderFlag() {
+        if (countryCode) {
+            return (
+                <img
+                    src={`https://flagcdn.com/w40/${countryCode}.png`}
+                    alt={movie.original_language}
+                    style={{ width: "30px" }}
+                />
+            );
+        }
+
+        return <span>{movie.original_language}</span>;
+    }
+
     return (
         <div className="card-body text-white">
             <h5>{title}</h5>
             <p><strong>Titolo originale:</strong> {originalTitle}</p>
-            <p><strong>Lingua:</strong> {movie.original_language}</p>
+            <p><strong>Lingua:</strong> {renderFlag()}</p>
             <p><strong>Voto:</strong> {renderStars()}</p>
             <p>{movie.overview}</p>
         </div>
